@@ -1,12 +1,15 @@
 import React from 'react'
 
-const WrongLetters = ({ wrongLetters }) => {
+interface WrongLettersProps {
+    wrongLetters: string[]
+}
+
+const WrongLetters: React.FC<WrongLettersProps> = ({ wrongLetters }) => {
     return (
         <div className="wrong-letters-container">
             <div >
             {wrongLetters.length > 0 && <p>Wrong</p>}
-            {wrongLetters.map((letter, i) => <span key={i}>{letter}</span>)
-                .reduce((prev, curr) => prev === null ? [curr] : [prev, ',', curr], null)}
+            {wrongLetters.map((letter, i) => <span key={i}>{i === 0 ? letter : `, ${letter}`}</span>)}
   
             </div>
         </div> 

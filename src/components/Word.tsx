@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Word = ({ selectedWord, correctLetters }) => {
+interface WordProps {
+    selectedWord: string
+    correctLetters: string[]
+}
+
+const Word: React.FC<WordProps> = ({ selectedWord, correctLetters }) => {
     return (
         <div className="word" >
             {selectedWord.split('').map((letter, i) => {

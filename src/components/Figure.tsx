@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Figure = ({ wrongLetters }) => {
+interface FigureProps {
+    wrongLetters: string[]
+}
+
+const Figure: React.FC<FigureProps> = ({ wrongLetters }) => {
     const errors = wrongLetters.length;
 
     return (

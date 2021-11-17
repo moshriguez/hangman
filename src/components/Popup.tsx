@@ -1,7 +1,15 @@
 import React, {useEffect} from 'react'
 import {checkWin} from '../helpers/helpers'
 
-const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playAgain }) => {
+interface PopupProps {
+    correctLetters: string[]
+    wrongLetters: string[]
+    selectedWord: string
+    setPlayable: (arg: boolean) => void
+    playAgain: () => void
+}
+
+const Popup: React.FC<PopupProps> = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playAgain }) => {
     let finalMessage = ''
     let finalMessageRevealWord = ''
     let playable = true
